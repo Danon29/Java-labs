@@ -9,52 +9,6 @@ enum ShapeType
     SQUARE
 }
 
-interface  Shape
-{
-    double getArea();
-    double getPerimetr();
-    String getType();
-}
-
-interface  WithRadius
-{
-    double getRadius();
-}
-
-interface  ShapeCalculator()
-{
-    double getArea(Shape[] shapes);
-}
-
-class Rectangle implements  Shape
-{
-    double a, b;
-
-    Rectangle()
-    {
-        this.a = a;
-        this.b = b;
-    }
-
-    @Override
-    public double getArea()
-    {
-        return a*b;
-    }
-
-    @Override
-    public double getPerimetr()
-    {
-        return 2*(a+b);
-    }
-
-    @Override
-    public ShapeType getType()
-    {
-        return ShapeType.RECTANGLE;
-    }
-}
-
 class Triangle implements  Shape
 {
    double a, b, c;
@@ -85,6 +39,49 @@ class Triangle implements  Shape
    {
        return ShapeType.TRIANGLE;
    }
+}
+
+interface  Shape
+{
+    double getArea();
+    double getPerimetr();
+    String getType();
+}
+
+interface  WithRadius
+{
+    double getRadius();
+}
+
+
+
+class Rectangle implements  Shape
+{
+    double a, b;
+
+    Rectangle()
+    {
+        this.a = a;
+        this.b = b;
+    }
+
+    @Override
+    public double getArea()
+    {
+        return a*b;
+    }
+
+    @Override
+    public double getPerimetr()
+    {
+        return 2*(a+b);
+    }
+
+    @Override
+    public ShapeType getType()
+    {
+        return ShapeType.RECTANGLE;
+    }
 }
 
 class Ellipse implements  Shape
@@ -118,6 +115,7 @@ class Ellipse implements  Shape
         return ShapeType.ELLIPSE;
     }
 }
+
 
 class  Circle extends Ellipse implements WithRadius
 {
@@ -182,6 +180,13 @@ class Square extends Rectangle
         double a = Math.sqrt(area);
         return new Rectangle(a, a);
     }
+}
+
+
+
+interface  ShapeCalculator()
+{
+    double getArea(Shape[] shapes);
 }
 
 class ShapeSumAreas implements ShapeCalculator

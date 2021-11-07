@@ -26,7 +26,7 @@ interface  ShapeCalculator()
     double getArea(Shape[] shapes);
 }
 
-public class Rectangle implements  Shape
+class Rectangle implements  Shape
 {
     double a, b;
 
@@ -55,7 +55,7 @@ public class Rectangle implements  Shape
     }
 }
 
-public class Triangle implements  Shape
+class Triangle implements  Shape
 {
    double a, b, c;
 
@@ -87,7 +87,7 @@ public class Triangle implements  Shape
    }
 }
 
-public class Ellipse implements  Shape
+class Ellipse implements  Shape
 {
     double a, b;
 
@@ -119,7 +119,7 @@ public class Ellipse implements  Shape
     }
 }
 
-public class  Circle extends Ellipse implements WithRadius
+class  Circle extends Ellipse implements WithRadius
 {
     Circle()
     {
@@ -152,7 +152,7 @@ public class  Circle extends Ellipse implements WithRadius
     }
 }
 
-public class Square extends Rectangle
+class Square extends Rectangle
 {
     Square()
     {
@@ -184,7 +184,7 @@ public class Square extends Rectangle
     }
 }
 
-public class ShapeSumAreas implements ShapeCalculator
+class ShapeSumAreas implements ShapeCalculator
 {
     @Override
     public double getArea(Shape[] shapes)
@@ -199,7 +199,7 @@ public class ShapeSumAreas implements ShapeCalculator
     }
 }
 
-public class Main
+class Main
 {
 
     public static void main(String[] args)
